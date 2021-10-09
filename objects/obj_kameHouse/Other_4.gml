@@ -1,0 +1,51 @@
+/// @description Insert description here
+// You can write your code in this editor
+if(global.summonShenron_animation=false){
+	if(!audio_is_playing(title_screen_bg)){
+		audio_stop_all();
+	}
+
+		if(!created_Shenron){
+			created_Shenron=true;
+			new_Shenron=instance_create_layer(224,32,"Instances",obj_Shenron);
+			new_Shenron.sprite_index=spr_Shenron_faded;
+			new_Shenron.depth=depth-2;
+			with(new_Shenron){
+				alarm_set(0,-1);
+				image_alpha=1;
+				sprite_index=spr_Shenron
+			}
+		}
+		else{
+			if(instance_exists(obj_lightning)){
+				instance_destroy(obj_lightning);
+			}
+			with(obj_Shenron){
+				alarm_set(0,-1);
+				image_alpha=1;
+				sprite_index=spr_Shenron
+			}
+		}
+
+		sprite_index=spr_startScreen_bg1;
+		ground_animation=true;
+		with(obj_groundAnim){
+			alarm[0]=room_speed*3;
+			depth=other.depth-1;
+		}
+		nimbus=instance_create_layer(choose(room_width+75),128,"Instances",obj_gokuNimbus);
+		nimbus.depth=depth-1;
+		nimbus.y=random_range(75,room_height-75);
+		nimbus.move_speed=irandom_range(3,10);
+		start_btn=instance_create_layer(1200,450,"Instances",obj_startButtons);
+		start_btn.depth=depth-2;
+		start_btn.type="Start";
+		controls_btn=instance_create_layer(1200,550,"Instances",obj_startButtons);
+		controls_btn.depth=depth-2;
+		controls_btn.sprite_index=spr_startButtons_2ball;
+		controls_btn.type="Controls";
+		tutorial_btn=instance_create_layer(1200,650,"Instances",obj_startButtons);
+		tutorial_btn.depth=depth-2;
+		tutorial_btn.sprite_index=spr_startButtons_1ball;
+		tutorial_btn.type="Tutorial";
+	}

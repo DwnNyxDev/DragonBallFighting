@@ -1,0 +1,44 @@
+if(global.gameOver&&room=CellGamesRoom){
+	if(global.rounds_finished>=global.rounds||global.rounds_player1_won>(global.rounds/2)||global.rounds_player2_won>(global.rounds/2)){
+		if(alarm_get(1)<=0){
+			alarm[1]=room_speed*3;
+		}
+	}
+	else if(global.rounds_finished<global.rounds&&!reset_round){
+		reset_round=true;
+		alarm[0]=room_speed*3;
+	}
+}
+if(room=CellGamesRoom){
+	if(global.timer>0&&!global.paused){
+		global.timer--;
+	}
+	else if(global.timer=0){
+		if(global.obj_player_1.player_health<global.obj_player_2.player_health){
+			with(global.obj_player_1){
+				death_animation=true
+				state=PSTATE.DEATH;
+				yspeed=-7;
+				global.timer=-1;
+				xspeed=-4*image_xscale;
+				player_active=false;
+				enemy.player_active=false;
+				global.RelativeSpeed=.5;
+				alarm_set(7,-1);
+			}
+		}
+		else{
+			with(global.obj_player_2){
+				death_animation=true;
+				state=ESTATE.DEATH;
+				yspeed=-7;
+				global.timer=-1;
+				xspeed=-4*image_xscale;
+				player_active=false;
+				enemy.player_active=false;
+				global.RelativeSpeed=.5;
+				alarm_set(7,-1);
+			}
+		}
+	}
+}

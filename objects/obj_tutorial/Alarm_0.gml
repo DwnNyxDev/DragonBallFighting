@@ -1,0 +1,291 @@
+/// @description Insert description here
+// You can write your code in this editor
+if(welcome_message){
+	welcome_index++;
+	if(welcome_index<=2){
+		alarm[0]=4*string_length(welcome[welcome_index]);
+	}
+	else if(welcome_index>2){
+		welcome_message=false;
+		left_right_lesson=true;
+		lesson_index++;
+		alarm[0]=4*string_length(left_right[left_right_index]);
+	}
+}
+if(left_right_lesson){
+	left_right_index++;
+	if(left_right_index<2){
+		alarm[0]=4*string_length(left_right[left_right_index]);
+	}
+	else if(left_right_index>=3){
+		left_right_lesson=false;
+		jumping_lesson=true;
+		lesson_index++;
+		exit;
+	}
+}
+if(jumping_lesson){
+	if(jumping_index!=0){
+		jumping_index++;
+	}
+	if(jumping_index>=2){
+		jumping_lesson=false;
+		crouching_lesson=true;
+		lesson_index++;
+		exit;
+	}
+}
+if(crouching_lesson){
+	if(crouching_index!=0){
+		crouching_index++;
+	}
+	if(crouching_index>=2){
+		crouching_lesson=false;
+		dashing_lesson=true;
+		lesson_index++;
+		alarm[0]=4*string_length(dashing[dashing_index]);
+		exit;
+	}
+}
+if(dashing_lesson){
+	if(dashing_index!=1){
+		dashing_index++;
+
+			alarm[0]=4*string_length(dashing[dashing_index]);
+	
+	}
+	if(dashing_index>=3){
+		dashing_lesson=false;
+		flying_lesson=true;
+		lesson_index++;
+		exit;
+	}
+}
+if(flying_lesson){
+	if(flying_index!=0){
+		flying_index++;
+	}
+	if(flying_index>=2){
+		flying_lesson=false;
+		flying_lesson2=true;
+		lesson_index++;
+		alarm[0]=4*string_length(flying2[flying2_index]);
+		exit;
+	}
+}
+if(flying_lesson2){
+	if(flying2_index!=1){
+		flying2_index++;
+
+			alarm[0]=4*string_length(flying2[flying2_index]);
+	
+	}
+	if(flying2_index>=4){
+		flying_lesson2=false;
+		basic_attack_lesson=true
+		lesson_index++;
+		alarm[0]=4*string_length(basic_attack[basic_attack_index]);
+		exit;
+	}
+}
+if(basic_attack_lesson){
+	if(basic_attack_index!=2){
+		basic_attack_index++;
+			alarm[0]=4*string_length(basic_attack[basic_attack_index]);
+
+	}
+	if(basic_attack_index>=4){
+		basic_attack_lesson=false;
+		directional_attack_lesson=true
+		lesson_index++;
+		alarm[0]=4*string_length(directional_attack[directional_attack_index]);
+		exit;
+	}
+}
+if(directional_attack_lesson){
+	if(directional_attack_index!=2){
+		directional_attack_index++;
+			alarm[0]=4*string_length(directional_attack[directional_attack_index]);
+
+	}
+	if(directional_attack_index>=4){
+		directional_attack_lesson=false;
+		aerial_attack_lesson=true;
+		lesson_index++;
+		alarm[0]=4*string_length(aerial_attack[aerial_attack_index]);
+		exit;
+	}
+}
+if(aerial_attack_lesson){
+	if(aerial_attack_index!=2){
+		aerial_attack_index++;
+			alarm[0]=4*string_length(aerial_attack[aerial_attack_index]);
+
+	}
+	if(aerial_attack_index>=4){
+		aerial_attack_lesson=false;
+		special_attack_lesson1=true;
+		lesson_index++;
+		alarm[0]=4*string_length(special_attack1[special_attack1_index]);
+		exit;
+	}
+}
+if(special_attack_lesson1){
+	if(special_attack1_index!=2){
+		special_attack1_index++;
+			alarm[0]=4*string_length(special_attack1[special_attack1_index]);
+
+	}
+	if(special_attack1_index>=4){
+		special_attack_lesson1=false;
+		charging_lesson=true;
+		lesson_index++;
+		alarm[0]=4*string_length(charging[charging_index]);
+		exit;
+	}
+}
+if(charging_lesson){
+	if(charging_index!=2){
+		charging_index++;
+			alarm[0]=4*string_length(special_attack2[special_attack2_index]);
+
+	}
+	if(charging_index>=4){
+		charging_lesson=false;
+		special_attack_lesson2=true;
+		lesson_index++;
+		alarm[0]=4*string_length(special_attack2[special_attack2_index]);
+		/*
+		special_attack_lesson2=true;
+		alarm[0]=4*string_length(special_attack2[special_attack2_index]);
+		*/
+		exit;
+	}
+}
+if(special_attack_lesson2){
+	if(special_attack2_index!=2){
+		special_attack2_index++;
+			alarm[0]=4*string_length(special_attack2[special_attack2_index]);
+
+	}
+	if(special_attack2_index>=4){
+		special_attack_lesson2=false;
+		ultimate_attack_lesson1=true;
+		lesson_index++;
+		alarm[0]=4*string_length(ultimate_attack1[ultimate_attack1_index]);
+		exit;
+	}
+}
+if(ultimate_attack_lesson1){
+	if(ultimate_attack1_index!=2){
+		ultimate_attack1_index++;
+			alarm[0]=4*string_length(ultimate_attack1[ultimate_attack1_index]);
+
+	}
+	if(ultimate_attack1_index>=4){
+		ultimate_attack_lesson1=false;
+		ultimate_attack_lesson2=true;
+		lesson_index++;
+		alarm[0]=4*string_length(ultimate_attack2[ultimate_attack2_index]);
+		exit;
+	}
+}
+if(ultimate_attack_lesson2){
+	if(ultimate_attack2_index!=2){
+		ultimate_attack2_index++;
+			alarm[0]=4*string_length(ultimate_attack2[ultimate_attack2_index]);
+
+	}
+	if(ultimate_attack2_index>=4){
+		ultimate_attack_lesson2=false;
+		dodging_lesson=true;
+		lesson_index++;
+		alarm[0]=4*string_length(dodging[dodging_index]);
+		exit;
+	}
+}
+if(dodging_lesson){
+	if(dodging_index!=2){
+		dodging_index++;
+			alarm[0]=4*string_length(dodging[dodging_index]);
+
+	}
+	if(dodging_index>=4){
+		dodging_lesson=false;
+		blocking_lesson=true;
+		lesson_index++;
+		alarm[0]=4*string_length(blocking[blocking_index]);
+		exit;
+	}
+}
+if(blocking_lesson){
+	if(blocking_index!=2){
+		blocking_index++;
+			alarm[0]=4*string_length(blocking[blocking_index]);
+
+	}
+	if(blocking_index>=4){
+		blocking_lesson=false;
+		parrying_lesson=true;
+		lesson_index++;
+		global.obj_player_1.player_health=100;
+		global.obj_player_1.ki=100;
+		global.obj_player_1.stamina=100;
+		global.obj_player_2.player_health=100;
+		global.obj_player_2.ki=100;
+		global.obj_player_2.stamina=100;
+		global.obj_player_2.stateTimer=120;
+		alarm[0]=4*string_length(parrying[parrying_index]);
+		exit;
+	}
+}
+if(parrying_lesson){
+	if(parrying_index!=2){
+		parrying_index++;
+			alarm[0]=4*string_length(parrying[parrying_index]);
+
+	}
+	if(parrying_index>=4){
+		parrying_lesson=false;
+		global.obj_player_1.player_health=100;
+		global.obj_player_1.ki=100;
+		global.obj_player_1.stamina=100;
+		global.obj_player_2.player_health=100;
+		global.obj_player_2.ki=100;
+		global.obj_player_2.stamina=100;
+		global.obj_player_2.stateTimer=120;
+		tired_lesson=true;
+		lesson_index++;
+		alarm[0]=4*string_length(tired[tired_index]);
+		exit;
+	}
+}
+if(tired_lesson){
+	if(tired_index!=2){
+		tired_index++;
+			alarm[0]=4*string_length(tired[tired_index]);
+
+	}
+	if(tired_index>=4){
+		tired_lesson=false;
+		global.obj_player_1.player_health=100;
+		global.obj_player_1.ki=100;
+		global.obj_player_1.stamina=100;
+		global.obj_player_2.player_health=100;
+		global.obj_player_2.ki=100;
+		global.obj_player_2.stamina=100;
+		global.obj_player_2.stateTimer=120;
+		freePlay_lesson=true;
+		lesson_index++;
+		alarm[0]=4*string_length(freePlay[freePlay_index]);
+		exit;
+	}
+}
+if(freePlay_lesson){
+	if(freePlay_index!=2){
+		freePlay_index++;
+		alarm[0]=4*string_length(freePlay[freePlay_index]);
+
+	}
+	
+}
